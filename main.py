@@ -8,7 +8,7 @@ def word_letter_counter():
                        "same folder as this program. Files are limited to the following extensions: "
                        ".txt, .csv, and .docx\n")
     if user_input.endswith('.txt'):
-        with open('TextFile.txt') as text:
+        with open(user_input) as text:
             lines = text.readlines()
             word_counter = 0
             letter_counter = 0
@@ -21,7 +21,7 @@ def word_letter_counter():
 
             print(f'This file has {word_counter} words and {letter_counter} letters.')
     if user_input.endswith('.csv'):
-        with open('TextCSV.csv', newline='') as csvfile:
+        with open(user_input, newline='') as csvfile:
             line_reader = csv.reader(csvfile)
             word_list = []
             letter_list = []
