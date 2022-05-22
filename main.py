@@ -6,7 +6,7 @@ import csv
 def word_letter_counter():
     user_input = input("Please write the full name of the file, including its extension. Make sure the file is in the "
                        "same folder as this program. Files are limited to the following extensions: "
-                       ".txt, .csv, and .docx\n")
+                       ".txt, .csv(UTF-8), and .docx\n")
     if user_input.endswith('.txt'):
         with open(user_input) as text:
             lines = text.readlines()
