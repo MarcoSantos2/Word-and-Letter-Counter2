@@ -1,9 +1,8 @@
 #Create a program that can open, read, and count the words and letters in a .CSV, .docx, and .TXT file
 
 import csv
-#import docx >>> For Some reason this Python Module is not being found/working. It was working previously. Already tried a pip install.
-
-#print(help(docx))
+#import docx >>> For Some reason this Python Module is not being found/working. It was working previously. Already
+# tried a pip install and installing from pycharm
 
 def word_letter_counter():
 
@@ -25,6 +24,8 @@ def word_letter_counter():
                                 letter_counter += 1
 
                     print(f'This file has {word_counter} words and {letter_counter} letters.')
+                    break
+
             if user_input.endswith('.csv'):
                 with open(user_input, newline='') as csvfile:
                     line_reader = csv.reader(csvfile)
@@ -38,14 +39,13 @@ def word_letter_counter():
                         for letter in letters:
                             letter_list.append(letter)
                     print(f'This file has {len(word_list)} words and {len(letter_list)} letters.')
+                    break
         except ValueError:
             print("Oops!  That was not a valid file name.  Please try again.")
 
-
-
             '''if user_input.endswith('.docx'):
                 def getText(filename):
-                    doc = docx.Document(filename)    #this line was originally working but for some reason the .Document method is not working
+                    doc = docx.Document(filename)    #this line was originally working but for some reason the .Document method is not working anymore.
                     fullText = []
                     for para in doc.paragraphs:
                         fullText.append(para.text)
@@ -58,7 +58,7 @@ def word_letter_counter():
                             for letter in word:
                                 letter_counter += 1
                     print(f'This file has {word_counter} words and {letter_counter} letters.')
-                getText('A Silence of Three Parts.docx')
+                getText('A Silence of Three Parts.docx')'''
 
-word_letter_counter()'''
+word_letter_counter()
 
